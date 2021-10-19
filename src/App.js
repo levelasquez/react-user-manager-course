@@ -22,45 +22,50 @@ function App() {
   }
 
   return (
-    <Container>
-      <Card>
-        <div style={{ padding: 20 }}>
-          <form onSubmit={submit}>
-            <Input
-              type="text"
-              name="name"
-              label="Name"
-              value={form.name}
-              onChange={handleChange}
-            />
-            <Input
-              type="text"
-              name="lastname"
-              label="Lastname"
-              value={form.lastname}
-              onChange={handleChange}
-            />
-            <Input
-              type="text"
-              name="email"
-              label="Email"
-              value={form.email}
-              onChange={handleChange}
-            />
-            <Button>Send</Button>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <ul>
-          {users.map((user) => (
-            <li
-              key={user.email}
-            >{`${user.name} ${user.lastname} ${user.email}`}</li>
-          ))}
-        </ul>
-      </Card>
-    </Container>
+    <div style={{ marginTop: '15%' }}>
+      <Container>
+        <Card>
+          <div style={{ padding: 20 }}>
+            <form onSubmit={submit}>
+              <Input
+                type="text"
+                name="name"
+                label="Name"
+                placeholder="Name"
+                value={form.name}
+                onChange={handleChange}
+              />
+              <Input
+                type="text"
+                name="lastname"
+                label="Lastname"
+                placeholder="Lastname"
+                value={form.lastname}
+                onChange={handleChange}
+              />
+              <Input
+                type="text"
+                name="email"
+                label="Email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              <Button>Send</Button>
+            </form>
+          </div>
+        </Card>
+        <Card>
+          <ul>
+            {users.map((user) => (
+              <li
+                key={user.email}
+              >{`${user.name} ${user.lastname} ${user.email}`}</li>
+            ))}
+          </ul>
+        </Card>
+      </Container>
+    </div>
   )
 }
 
